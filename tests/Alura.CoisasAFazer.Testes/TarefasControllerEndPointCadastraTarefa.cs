@@ -53,7 +53,7 @@ namespace Alura.CoisasAFazer.Testes
             var mockLogger = new Mock<ILogger<CadastraTarefaHandler>>();
 
             var mock = new Mock<IRepositorioTarefas>();
-            mock.Setup(r => r.ObtemCategoriaPorId(20)).Returns(new Categoria(20, "Estudo"));
+            mock.Setup(r => r.ObtemCategoriaPorId(20)).Returns(new Categoria(20, "Estudos"));
             mock.Setup(r => r.IncluirTarefas(It.IsAny<Tarefa[]>())).Throws(new Exception("Houve um erro"));
             var repo = mock.Object;
 

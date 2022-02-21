@@ -9,12 +9,13 @@ namespace Alura.CoisasAFazer.Testes
 {
     class RepositorioFake : IRepositorioTarefas
     {
-        List<Tarefa> lista = new List<Tarefa>();
+        readonly List<Tarefa> lista = new List<Tarefa>();
 
         public void IncluirTarefas(params Tarefa[] tarefas)
         {
             throw new Exception("Houve um erro ao incluir as tarefas.");
-            tarefas.ToList().ForEach(t => lista.Add(t));
+            tarefas.ToList()
+                .ForEach(t => lista.Add(t));
         }
 
         public IEnumerable<Tarefa> ObtemTarefas(Func<Tarefa, bool> filtro)
